@@ -1,0 +1,567 @@
+# ============================================
+# Python - General
+# ============================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+*.pyo
+*.pyc
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# ============================================
+# IDE / Editor Specific
+# ============================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.vscode-test/
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+.idea_modules/
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+*.sublime-settings
+
+# Atom
+.atom/
+*.atom
+
+# Vim
+*.swp
+*.swo
+*~
+*.un~
+*.orig
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Eclipse
+.project
+.classpath
+.settings/
+*.pydevproject
+*.pyd
+
+# NetBeans
+nbproject/
+nbactions.xml
+*.nbp
+
+# ============================================
+# Operating System Specific
+# ============================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================
+# Project Specific - Customer Support Agent
+# ============================================
+
+# Data files
+data/
+data/knowledge_base/
+data/conversations/
+*.db
+*.sqlite
+*.sqlite3
+*.json
+*.pickle
+*.pkl
+
+# Uploaded files
+uploads/
+static/uploads/
+media/
+
+# Generated files
+*.log
+logs/
+*.pid
+*.lock
+
+# Resume files
+data/resumes/customized/
+*.pdf
+*.docx
+*.doc
+
+# Job search data
+data/jobs/
+job_search_cache/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Secret keys
+secrets/
+*.key
+*.pem
+*.crt
+*.csr
+*.priv
+
+# Backup files
+*.backup
+*.bak
+*.old
+*.orig
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# ============================================
+# Build / Distribution
+# ============================================
+
+# Build outputs
+dist/
+build/
+*.whl
+*.tar.gz
+*.egg
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose*.yml
+
+# Kubernetes
+*.yaml
+*.yml
+kubeconfig
+
+# ============================================
+# Cloud / Deployment
+# ============================================
+
+# Heroku
+*.slug
+.slugignore
+.heroku/
+heroku.yml
+
+# Railway
+railway.json
+.railway
+
+# Vercel
+.vercel
+vercel.json
+
+# Netlify
+.netlify
+netlify.toml
+
+# AWS
+.aws/
+aws/
+*.pem
+*.p12
+*.pfx
+
+# Azure
+.azure/
+azure-*.json
+
+# Google Cloud
+.gae/
+*.gcp
+google-*.json
+
+# ============================================
+# Testing / Development
+# ============================================
+
+# Test files
+tests/__pycache__/
+tests/*.pyc
+.tests/
+.coverage
+
+# Profiling
+*.prof
+*.gcda
+*.gcno
+
+# Debugging
+debug/
+*.debug
+*.trace
+
+# ============================================
+# Documentation
+# ============================================
+
+docs/_build/
+docs/api/
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.toc
+*.synctex.gz
+*.pdf
+
+# ============================================
+# Logs and Cache
+# ============================================
+
+# Application logs
+logs/
+*.log
+*.out
+*.err
+
+# Cache directories
+.cache/
+cache/
+*.cache
+*.cached
+
+# Mypy cache
+.mypy_cache/
+
+# Python coverage
+.coverage
+htmlcov/
+
+# ============================================
+# API Keys & Credentials (Security)
+# ============================================
+
+# Never commit these!
+*.key
+*.pem
+*.crt
+*.csr
+*.priv
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.truststore
+*.env.*
+credentials.json
+service-account.json
+oauth2.json
+
+# OpenRouter keys
+openrouter.key
+openrouter.json
+
+# ============================================
+# Miscellaneous
+# ============================================
+
+# C extensions
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ============================================
+# Git Specific
+# ============================================
+
+# Git hooks
+.git/hooks/
+*.sample
+
+# Git merge files
+*.orig
+*.rej
+
+# ============================================
+# Project Structure - Keep these directories
+# ============================================
+
+# But keep the directories structure
+!.gitkeep
+!data/.gitkeep
+!data/knowledge_base/.gitkeep
+!data/conversations/.gitkeep
+!data/resumes/.gitkeep
+!logs/.gitkeep
+!static/.gitkeep
+!templates/.gitkeep
+
+# ============================================
+# Development Tools
+# ============================================
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-workspace
+
+# ============================================
+# Web Assets (Optional)
+# ============================================
+
+# Node modules (if you use any frontend)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Compiled frontend assets
+*.min.js
+*.min.css
+*.bundle.js
+*.chunk.js
+
+# ============================================
+# Database files
+# ============================================
+
+*.db
+*.sqlite
+*.sqlite3
+*.mdb
+*.accdb
+
+# ============================================
+# Final - Everything else that might be sensitive
+# ============================================
+
+# Sensitive information
+*.secret
+*.private
+*.confidential
+*.password
+*.credential
+
+# Configuration files with sensitive data
+config.local.*
+settings.local.*
+application.local.*
+development.local.*
+
+# Backup files from editors
+*~
+*.swp
+*.swo
+*.swn
+*.un~

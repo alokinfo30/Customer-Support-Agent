@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Agent - CrewAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Multi-Agent Customer Support</h1>
+            <p class="subtitle">Powered by CrewAI & OpenRouter</p>
+            <div class="badge-container">
+                <span class="badge">🔄 Memory Enabled</span>
+                <span class="badge">🧠 Multi-Model</span>
+                <span class="badge">⚡ Auto-Fallback</span>
+            </div>
+        </header>
+
+        <main>
+            <!-- Model Status -->
+            <div class="model-status">
+                <h3>📊 Available Models</h3>
+                <div id="modelList" class="model-grid">
+                    <div class="model-item">Loading models...</div>
+                </div>
+            </div>
+
+            <!-- Support Inquiry Form -->
+            <div class="inquiry-section">
+                <h2>📝 Submit Support Inquiry</h2>
+                <div class="form-group">
+                    <label for="customer">Customer Name</label>
+                    <input type="text" id="customer" value="DeepLearningAI" placeholder="e.g., DeepLearningAI">
+                </div>
+                <div class="form-group">
+                    <label for="person">Contact Person</label>
+                    <input type="text" id="person" value="Andrew Ng" placeholder="e.g., Andrew Ng">
+                </div>
+                <div class="form-group">
+                    <label for="inquiry">Inquiry</label>
+                    <textarea id="inquiry" rows="4" placeholder="Describe your support issue...">I need help with setting up a Crew and kicking it off, specifically how can I add memory to my crew? Can you provide guidance?</textarea>
+                </div>
+                <div class="button-group">
+                    <button id="submitBtn" class="btn-primary">🚀 Submit Inquiry</button>
+                    <button id="escalateBtn" class="btn-secondary">🔝 Escalate (Complex)</button>
+                </div>
+            </div>
+
+            <!-- Processing Status -->
+            <div id="processing" class="processing hidden">
+                <div class="spinner"></div>
+                <h3>🔄 Processing Your Inquiry...</h3>
+                <div class="agent-status">
+                    <span id="agent1">⏳ Support Agent: Idle</span>
+                    <span id="agent2">⏳ QA Agent: Idle</span>
+                    <span id="agent3">⏳ Memory: Active</span>
+                </div>
+                <div id="progressLog" class="progress-log"></div>
+            </div>
+
+            <!-- Response Display -->
+            <div id="response" class="response hidden">
+                <h2>📄 Support Response</h2>
+                <div class="response-meta">
+                    <span id="responseCustomer">Customer: DeepLearningAI</span>
+                    <span id="responseTime">Time: Now</span>
+                </div>
+                <div id="responseContent" class="response-content"></div>
+                <button id="copyBtn" class="btn-copy">📋 Copy Response</button>
+            </div>
+
+            <!-- Quick Examples -->
+            <div class="examples-section">
+                <h3>📚 Quick Examples</h3>
+                <div class="example-grid">
+                    <div class="example-card" data-inquiry="How do I install CrewAI?" data-customer="TechStartup" data-person="Jane">
+                        <h4>💻 Installation Help</h4>
+                        <p>How do I install CrewAI?</p>
+                    </div>
+                    <div class="example-card" data-inquiry="I'm getting an error when running my crew. Error: 'ModuleNotFoundError: No module named crewai_tools'" data-customer="DevCorp" data-person="Mike">
+                        <h4>🐛 Error Resolution</h4>
+                        <p>ModuleNotFoundError with crewai_tools</p>
+                    </div>
+                    <div class="example-card" data-inquiry="Can you explain how memory works in CrewAI? I want to make my agents remember past conversations." data-customer="AICo" data-person="Sarah">
+                        <h4>🧠 Memory Feature</h4>
+                        <p>How does memory work in CrewAI?</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>🏢 crewAI - Multi-Agent Customer Support Automation</p>
+            <p class="powered-by">Powered by OpenRouter Multi-Model System</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
