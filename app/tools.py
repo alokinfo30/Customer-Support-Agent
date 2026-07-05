@@ -1,6 +1,9 @@
 import os
 import logging
-from crewai_tools import SerperDevTool, ScrapeWebsiteTool, WebsiteSearchTool
+# Replace the broad import with specific module targets:
+from crewai_tools.tools.serper_dev_tool.serper_dev_tool import SerperDevTool
+from crewai_tools.tools.scrape_website_tool.scrape_website_tool import ScrapeWebsiteTool
+from crewai_tools.tools.website_search_tool.website_search_tool import WebsiteSearchTool
 from typing import Optional
 
 logger = logging.getLogger(__name__)
