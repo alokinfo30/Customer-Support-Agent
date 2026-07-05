@@ -22,24 +22,14 @@ class SupportAgents:
         self.model_manager = model_manager
     
     def _create_llm(self, config: dict):
-        """Create LangChain LLM from OpenRouter config"""
+        """Pass native string to bypass Pydantic validation mismatches"""
         model = config['model']
-        temperature = config.get('temperature', 0.3)
         
-        try:
-            return ChatOpenAI(
-                model=model,
-                api_key=os.getenv('OPENROUTER_API_KEY'),
-                base_url=os.getenv('OPENROUTER_BASE_URL', 'https://openrouter.ai/api/v1'),
-                temperature=temperature,
-                default_headers={
-                    "HTTP-Referer": os.getenv('OPENROUTER_APP_URL', 'http://localhost:5000'),
-                    "X-Title": os.getenv('OPENROUTER_APP_NAME', 'CustomerSupportAgent')
-                }
-            )
-        except Exception as e:
-            logger.error(f"Error creating LLM: {str(e)}")
-            raise
+        # Ensures the model string starts with 'openrouter/' so CrewAI routes it correctly
+        if not model.startswith("openrouter/"):
+            return f"openrouter/{model}"
+            
+        return model
     
     def create_support_agent(self, tools: list = None):
         """
