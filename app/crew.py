@@ -108,12 +108,17 @@ class SupportCrew:
             
             logger.info("Support crew execution completed")
             
+            if not result:
+                raise Exception("Crew execution returned no result. This might be due to an internal error in the crew.")
+
             return {
                 "status": "success",
                 "customer": customer,
                 "person": person,
                 "inquiry": inquiry,
-                "response": str(result),
+                # The result from a sequential crew is the output of the last task.
+                # It's usually a string, so str() is okay, but we check for None first.
+                "response": result,
                 "memory_enabled": self.memory_enabled
             }
             

@@ -33,36 +33,56 @@ CustomerSupportAgent/
 
 
 
-Quick Start Commands
-powershell
-# 1. Install dependencies
-pip install -r requirements.txt
+## Quick Start
 
-# 2. Generate secret key
-python generate_secret.py
+Follow these steps to set up and run the project on Windows (using PowerShell).
 
-# 3. Get OpenRouter API key from: https://openrouter.ai/keys
-# 4. Update .env with your OpenRouter API key
-
-# 5. Test OpenRouter
-python test_openrouter.py
-
-# 6. Run the application
-python -m app.main
-
-# 7. Open browser: http://localhost:5000
-
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-.venv\Scripts\activate
-
-python -m pip install --upgrade pip setuptools wheel
- pip install "numpy>=2.0.0"  
-pip install crewai langchain-openai
-
-pip install -r requirements.txt
+1.  **Clone the repository and navigate into the project directory.**
 
 
+
+# Deactivate if you're inside the (.venv)
+deactivate
+
+# Remove the old virtual environment directory
+Remove-Item -Recurse -Force .venv
+
+
+2.  **Create and activate a virtual environment:**
+    ```powershell
+    # Use the Python launcher 'py' on Windows for reliability
+    py -m venv .venv
+    .\.venv\Scripts\Activate.ps1
+    ```
+
+3.  **Install the required dependencies:**
+    ```powershell
+    # Upgrade pip and install packages from requirements.txt
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+    ```
+
+4.  **Set up your environment variables:**
+    -   Rename the `.env.example` file (if you have one) to `.env`.
+    -   Get an API key from OpenRouter.
+    -   Add your `OPENROUTER_API_KEY` to the `.env` file.
+    -   Generate a secret key for Flask:
+        ```powershell
+        python generate_secret.py
+        ```
+        This will also add the `SECRET_KEY` to your `.env` file.
+
+5.  **Test the OpenRouter configuration:**
+    ```powershell
+    python test_openrouter.py
+    ```
+
+6.  **Run the web application:**
+    ```powershell
+    python -m app.main
+    ```
+
+7.  **Open your browser** and navigate to `http://localhost:5000`.
 
 📊 Model Configuration Summary
 Agent	Model	Purpose
