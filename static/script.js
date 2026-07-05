@@ -108,9 +108,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const data = await response.json();
 
-            if (response.ok && data.status === 'success') {
+            if (response.ok && data.status === 'success') { // data is now the direct result
                 updateAgentStatus('complete', 'Support process completed successfully!');
-                displayResponse(data.result, customer, person);
+                displayResponse(data, customer, person);
             } else {
                 updateAgentStatus('error', `Error: ${data.error || 'Unknown error'}`);
                 alert(`Error: ${data.error || 'Failed to process inquiry'}`);

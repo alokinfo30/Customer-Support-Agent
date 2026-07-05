@@ -180,6 +180,8 @@ class SupportCrew:
             
         except Exception as e:
             logger.error(f"Escalation processing failed: {str(e)}")
+            import traceback
+            traceback.print_exc()
             return {
                 "status": "error",
                 "error": str(e),
@@ -218,6 +220,8 @@ class SupportCrew:
             
         except Exception as e:
             logger.error(f"Analytics failed: {str(e)}")
+            import traceback
+            traceback.print_exc()
             return {
                 "status": "error",
                 "error": str(e)

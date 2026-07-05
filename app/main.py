@@ -135,11 +135,7 @@ def handle_support():
         
         result = crew.process_inquiry(customer, person, inquiry)
         
-        return jsonify({
-            'status': 'success',
-            'result': result,
-            'timestamp': datetime.utcnow().isoformat()
-        })
+        return jsonify(result)
         
     except Exception as e:
         logger.error(f"Error handling support: {str(e)}")
@@ -177,11 +173,7 @@ def escalate_support():
         
         result = crew.process_with_escalation(customer, person, inquiry, complexity)
         
-        return jsonify({
-            'status': 'success',
-            'result': result,
-            'timestamp': datetime.utcnow().isoformat()
-        })
+        return jsonify(result)
         
     except Exception as e:
         logger.error(f"Error in escalation: {str(e)}")
@@ -203,11 +195,7 @@ def analyze_patterns():
         
         result = crew.analyze_support_patterns(conversations)
         
-        return jsonify({
-            'status': 'success',
-            'result': result,
-            'timestamp': datetime.utcnow().isoformat()
-        })
+        return jsonify(result)
         
     except Exception as e:
         logger.error(f"Error in analytics: {str(e)}")
