@@ -32,7 +32,7 @@ class SupportCrew:
             self.model_manager = model_manager
             
             # Enable memory for learning from interactions
-            self.memory_enabled = os.getenv('MEMORY_ENABLED', 'True').lower() == 'true'
+            self.memory_enabled = os.getenv('MEMORY_ENABLED', 'False').lower() == 'false'
             
             logger.info("SupportCrew initialized with memory: {}".format(self.memory_enabled))
             
@@ -93,6 +93,13 @@ class SupportCrew:
                 tasks=[inquiry_task, qa_task],
                 verbose=self.verbose,
                 memory=self.memory_enabled,
+                embedder={
+                        "provider": "openrouter",
+                        "config": {
+                            "model": "google/text-embedding-004", # Or any embedding model supported by OpenRouter
+                            "api_key": os.getenv("OPENROUTER_API_KEY")
+                        }
+                    },
                 cache=True  # Cache results for efficiency
             )
             
@@ -157,7 +164,14 @@ class SupportCrew:
                 agents=[support_agent, escalation_agent, qa_agent],
                 tasks=[inquiry_task, escalation_task],
                 verbose=self.verbose,
-                memory=self.memory_enabled
+                memory=self.memory_enabled,
+                  embedder={
+                        "provider": "openrouter",
+                        "config": {
+                            "model": "google/text-embedding-004", # Or any embedding model supported by OpenRouter
+                            "api_key": os.getenv("OPENROUTER_API_KEY")
+                        }
+                    }
             )
             
             result = crew.kickoff(
@@ -204,7 +218,14 @@ class SupportCrew:
                 agents=[analytics_agent],
                 tasks=[analytics_task],
                 verbose=self.verbose,
-                memory=self.memory_enabled
+                memory=self.memory_enabled,
+                  embedder={
+                        "provider": "openrouter",
+                        "config": {
+                            "model": "google/text-embedding-004", # Or any embedding model supported by OpenRouter
+                            "api_key": os.getenv("OPENROUTER_API_KEY")
+                        }
+                    },
             )
             
             result = crew.kickoff(

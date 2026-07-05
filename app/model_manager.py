@@ -25,8 +25,14 @@ class OpenRouterManager:
         
         self.base_url = os.getenv('OPENROUTER_BASE_URL', 'https://openrouter.ai/api/v1')
         self.app_url = os.getenv('OPENROUTER_APP_URL', 'http://localhost:5000')
-        self.app_name = os.getenv('OPENROUTER_APP_NAME', 'CustomerSupportAgent')
+        self.app_name = os.getenv('OPENROUTER_APP_NAME', 'Customer Support Agent')
         
+        # Production environment check for app_url
+        is_production = os.getenv('FLASK_ENV') == 'production'
+        if is_production and 'localhost' in self.app_url:
+            logger.warning("⚠️ WARNING: Running in production, but OPENROUTER_APP_URL is not set or is localhost.")
+            logger.warning("   Set OPENROUTER_APP_URL to your public app URL in your production environment.")
+
         # Initialize OpenAI client with OpenRouter base URL
         self.client = OpenAI(
             base_url=self.base_url,
